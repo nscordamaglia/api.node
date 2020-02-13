@@ -1,0 +1,2 @@
+{"_id":{"$oid":"5e4496bf3b1e2b79ee284962"},"nombre":"jose","apellido":"lopez","username":"jlopez","email":"jlopez@gmail.com","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e44994d3b1e2b79ee284964"},"nombre":"pepe","apellido":"medina","username":"pmedina","email":"pmedina@gmail.com","__v":{"$numberInt":"0"}}
