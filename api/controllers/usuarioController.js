@@ -11,21 +11,21 @@ exports.getUsers = (req, res) => {
   exports.addUser = (req, res) => {
     const nuevoUsuario = new Usuario(req.body);
     nuevoUsuario.save((err, Usuario) => {
-      if (err) res.send(err);
+      if (err) res.status(500).json(err);
       res.json(Usuario);
     });
   };
   
   exports.getUserById = (req, res) => {
-    Usuario.findById(req.params.UsuarioId, (err, Usuario) => {
+    Usuario.findById(req.params.id, (err, Usuario) => {
       if (err) res.send(err);
       res.json(Usuario);
     });
   };
   
   exports.updateUser = (req, res) => {
-    Usuario.findOneAndUpdate(
-      { _id: req.params.UsuarioId },
+    Usuario.findByIdAndUpdate(
+      { _id: req.params.id},
       req.body,
       { new: true },
       (err, Usuario) => {
@@ -36,11 +36,11 @@ exports.getUsers = (req, res) => {
   };
   
   exports.delUser = (req, res) => {
-    Usuario.deleteOne({ _id: req.params.UsuarioId }, err => {
+    Usuario.findByIdAndDelete({ _id: req.params.id }, err => {
       if (err) res.send(err);
       res.json({
         message: 'Usuario  borrado',
-       _id: req.params.UsuarioId
+       _id: req.params.id
       });
     });
   };

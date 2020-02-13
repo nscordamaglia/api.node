@@ -8,10 +8,10 @@ import Controller from '../controllers/usuarioController';
 router.post('/create', Controller.addUser);
   
   // Get con parámetros
-router.get('/user/:id', Controller.getUsers);
+router.get('/users', Controller.getUsers);
   
   // Get con todos los documentos
-  router.get('/user', Controller.getUserById);
+  router.get('/user/:id', Controller.getUserById);
 
   // Delete eliminar una nota
 router.delete('/user/:id', Controller.delUser);
